@@ -1,5 +1,5 @@
 window.onload = () => {
-    const salvo = localStorage.getItem('rascunho_david_v8');
+    const salvo = localStorage.getItem('rascunho_david_v9');
     if (salvo) {
         const dados = JSON.parse(salvo);
         document.getElementById('cliente-nome').value = dados.cliente || '';
@@ -83,7 +83,7 @@ function salvarTudo() {
         modelos: modelos
     };
 
-    localStorage.setItem('rascunho_david_v8', JSON.stringify(backup));
+    localStorage.setItem('rascunho_david_v9', JSON.stringify(backup));
     document.getElementById('save-status').innerText = "Salvo: " + new Date().toLocaleTimeString();
 }
 
@@ -106,14 +106,13 @@ function removerModelo(id) {
 function gerarQRCode() {
     const container = document.getElementById("qrcode");
     container.innerHTML = "";
-    // Atualizado com o seu número
     const linkWa = "https://wa.me/5585999171800?text=Olá%20David,%20recebi%20seu%20orçamento.";
     new QRCode(container, { text: linkWa, width: 60, height: 60 });
 }
 
 function limparRascunho() {
     if(confirm("Deseja apagar este orçamento?")) {
-        localStorage.removeItem('rascunho_david_v8');
+        localStorage.removeItem('rascunho_david_v9');
         location.reload();
     }
 }

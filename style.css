@@ -5,7 +5,7 @@
     --border: #e2e8f0;
 }
 
-/* Correção definitiva do erro de cor na impressão */
+/* Forçar cores na impressão e remover erro de compatibilidade */
 * { 
     -webkit-print-color-adjust: exact; 
     print-color-adjust: exact; 
@@ -39,11 +39,12 @@ body {
 .brand-text h2 { font-size: 18px; margin: 0; color: var(--primary); }
 .brand-text p { font-size: 11px; margin: 0; color: #6b7280; }
 
-/* Meta Strip */
+/* Meta Strip - ALINHADO À DIREITA */
 .meta-strip { display: grid; grid-template-columns: 1fr 2fr; background: var(--bg-gray); padding: 20px 40px; }
 .meta-label { font-size: 10px; font-weight: 800; color: var(--accent); display: block; }
 .meta-value { font-size: 14px; color: var(--primary); font-weight: 700; border: none; background: transparent; outline: none; width: 100%; }
-.client-input { text-align: right; color: var(--accent); }
+.client-block { text-align: right; } /* Garante que o bloco todo alinhe à direita */
+.client-input { text-align: right; color: var(--accent); } /* Alinha o texto dentro do input */
 
 /* Modelo Item */
 .modelo-item { display: grid; grid-template-columns: 180px 1fr; gap: 30px; padding: 30px 40px; border-bottom: 1px solid var(--border); position: relative; }
@@ -94,7 +95,7 @@ body {
     
     .modelo-item { 
         padding: 10px 0; 
-        grid-template-columns: 110px 1fr; /* Foto menor na impressão */
+        grid-template-columns: 110px 1fr; 
         gap: 20px;
         page-break-inside: avoid;
     }
@@ -106,5 +107,4 @@ body {
     .footer-summary { padding: 20px 0; grid-template-columns: 1fr 220px; gap: 20px; }
     .total-box-final { background: var(--primary) !important; color: #fff !important; padding: 15px; }
     .total-value-final { font-size: 22px; color: var(--accent) !important; }
-    .btn-site-styled { border: 1px solid var(--primary); color: #000; background: none; }
 }
